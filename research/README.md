@@ -5,6 +5,13 @@ This repository contains a comprehensive collection of academic papers, research
 ## Purpose
 To provide theoretical foundations, cutting-edge research insights, and practical implementations of RAG systems. This collection serves as a reference for researchers, practitioners, and students working in the field of AI and information retrieval.
 
+## Local Documents
+
+This directory contains the following documents for offline reference:
+
+- **[RAG_2005.11401v4.pdf](RAG_2005.11401v4.pdf)** - The original RAG paper by Lewis et al. (2020) - "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks"
+- **[Handbook_to_Transformer_Models_and_Variants.pdf](Handbook_to_Transformer_Models_and_Variants.pdf)** - Comprehensive guide to transformer architectures and their variants, essential for understanding the generation component of RAG systems
+
 ## Core RAG Papers
 
 ### Foundational Papers
