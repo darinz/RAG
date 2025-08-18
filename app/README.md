@@ -55,7 +55,7 @@ A comprehensive RAG system that ingests PDF documents and provides intelligent q
 ### Quick Start
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/darinz/RAG.git
 cd app
 
 # Install dependencies
