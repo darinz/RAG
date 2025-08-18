@@ -6,70 +6,25 @@ Welcome to the **RAG Repository**, a comprehensive resource designed to facilita
 
 Retrieval-Augmented Generation (RAG) combines information retrieval techniques with generative language models to create AI systems that can provide accurate, factual, and contextually relevant responses. RAG systems retrieve relevant documents or information and use them to generate more informed and reliable answers.
 
-### 1. `/app` - Practical Implementation
-The `app` directory contains a fully functional RAG implementation:
+## Repository Structure
 
-#### `/ai-pdf-chatbot`
-A production-ready RAG system built with modern technologies:
+### `/app` - Production RAG Implementation
+**`/ai-pdf-chatbot`**: Full-stack RAG system with LangGraph backend and Next.js frontend
+- **Backend**: LangGraph workflows, dual graph system (ingestion + retrieval), multi-format support
+- **Frontend**: TypeScript, real-time chat, file upload, responsive UI with shadcn/ui
+- **Tech Stack**: Python/LangGraph/OpenAI/ChromaDB + Next.js/Tailwind
 
-**Backend Features:**
-- **LangGraph-based architecture** for complex RAG workflows
-- **Dual graph system**: Ingestion graph for document processing and Retrieval graph for query handling
-- **Multiple document formats** support (PDF, text, JSON)
-- **Advanced retrieval techniques** with configurable strategies
-- **State management** for complex conversation flows
+### `/reference` - Learning Resources
+Comprehensive guides and tutorials for RAG development:
+- **Learning paths** for beginner to advanced levels
+- **Implementation guides** for frameworks (LangChain, LlamaIndex, Haystack)
+- **Best practices** and architectural patterns
 
-**Frontend Features:**
-- **Modern Next.js interface** with TypeScript
-- **Real-time chat interface** with streaming responses
-- **File upload and preview** capabilities
-- **Responsive design** with shadcn/ui components
-- **Theme support** (light/dark mode)
-
-**Key Technologies:**
-- **Backend**: Python, LangGraph, LangChain, OpenAI, ChromaDB
-- **Frontend**: Next.js, TypeScript, Tailwind CSS, shadcn/ui
-- **Architecture**: Graph-based workflows, state management, modular design
-
-### 2. `/reference` - Learning Resources
-The `reference` directory provides comprehensive learning materials:
-
-**Core Concepts & Fundamentals:**
-- Books and textbooks on RAG, NLP, and information retrieval
-- Implementation guides and tutorials
-- Framework documentation (LangChain, LlamaIndex, Haystack)
-
-**Learning Paths:**
-- **Beginner**: RAG basics, vector embeddings, text chunking
-- **Intermediate**: Advanced retrieval, generation optimization
-- **Advanced**: System design, evaluation metrics, production considerations
-
-**Implementation Resources:**
-- Framework comparisons and tutorials
-- Best practices and architectural patterns
-- Community resources and conferences
-
-### 3. `/research` - Academic Foundation
-The `research` directory contains academic papers and research materials:
-
-**Core RAG Papers:**
-- Foundational papers (Lewis et al., 2020)
-- Advanced architectures (Self-RAG, RAG-Fusion)
-- Evaluation frameworks (RAGAS)
-
-**Component Research:**
-- **Retrieval**: Dense, sparse, and hybrid retrieval methods
-- **Generation**: Context-aware generation, multi-hop reasoning
-- **Evaluation**: RAG-specific metrics and benchmarks
-
-**Specialized Applications:**
-- Multi-modal RAG
-- Code RAG
-- Domain-specific applications
-
-**Local Documents:**
-- Original RAG paper (PDF)
-- Transformer models handbook (PDF)
+### `/research` - Academic Foundation
+Curated collection of RAG research and papers:
+- **Core papers**: Foundational RAG, advanced architectures, evaluation frameworks
+- **Component research**: Retrieval methods, generation techniques, evaluation metrics
+- **Local documents**: Original RAG paper and transformer handbook (PDFs)
 
 ## Getting Started
 
