@@ -25,6 +25,22 @@ This repository contains a comprehensive collection of resources for learning an
 - **LlamaIndex RAG Pipeline** - Comprehensive RAG implementation guide
 - **Hugging Face RAG Course** - Free course on building RAG applications
 - **OpenAI RAG Best Practices** - Official guidelines for RAG implementation
+- [Kaggle: RAG Q&A for PDFs with LangChain + Hugging Face](https://www.kaggle.com/code/durjoychandrapaul/rag-q-a-system-by-langchain-huggingface-for-pdf/notebook)
+- [Implementing RAG with LangChain and Hugging Face (Medium)](https://medium.com/@akriti.upadhyay/implementing-rag-with-langchain-and-hugging-face-28e3ea66c5f7)
+- [LangChain Document Loaders](https://python.langchain.com/docs/integrations/document_loaders/)
+- [Advanced RAG on Hugging Face (LangChain Cookbook)](https://huggingface.co/learn/cookbook/en/advanced_rag)
+- [What is RAG? (AWS)](https://aws.amazon.com/what-is/retrieval-augmented-generation/)
+- [Build a RAG Data Ingestion Pipeline (AWS Big Data Blog)](https://aws.amazon.com/blogs/big-data/build-a-rag-data-ingestion-pipeline-for-large-scale-ml-workloads/)
+- [Local RAG with Unstructured, Ollama, FAISS, and LangChain (Medium)](https://medium.com/@dirakx/local-rag-with-unstructured-ollama-faiss-and-langchain-35e9dfeb56f1)
+- [Unstructured on PyPI](https://pypi.org/project/unstructured/)
+- [Structured data extraction with LLM schemas](https://simonwillison.net/2025/Feb/28/llm-schemas/)
+- [Azure OpenAI: Structured outputs](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/structured-outputs?tabs=python-secure%2Cdotnet-entra-id&pivots=programming-language-python)
+
+### Example Projects and Repos
+- [RAG From Scratch (LangChain)](https://github.com/langchain-ai/rag-from-scratch)
+- [OpenRAGTech: RAG using only open-source tools (GitHub)](https://github.com/imanoop7/RAG-using-only-opensource/tree/main)
+- [Building a Retrieval-Augmented Generation System with Open-Source Tools (Medium)](https://medium.com/@mauryaanoop3/building-a-retrieval-augmented-generation-system-with-open-source-tools-b1df6578e13b)
+
 
 ## Learning Paths
 
