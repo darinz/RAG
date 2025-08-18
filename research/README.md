@@ -30,7 +30,6 @@ To provide theoretical foundations, cutting-edge research insights, and practica
 ### Sparse Retrieval
 - **[SPLADE: Sparse Lexical and Expansion Model for First Stage Ranking](https://arxiv.org/abs/2107.05720)** (Formal et al., 2021) - Sparse neural retrieval
 - **[uniCOIL: A Unified Neural Retrieval Model for Multiple Retrieval Tasks](https://arxiv.org/abs/2202.07471)** (Lin & Ma, 2022) - Unified sparse retrieval
-- **[BM25 and Beyond: A Study of Neural Retrieval Models](https://arxiv.org/abs/2005.11401)** - Comparison of traditional vs neural approaches
 
 ### Hybrid Retrieval
 - **[Multi-Vector Retrieval with Sparse Dense Embeddings](https://arxiv.org/abs/2206.01432)** (Wang et al., 2022) - Combining sparse and dense approaches
@@ -46,7 +45,6 @@ To provide theoretical foundations, cutting-edge research insights, and practica
 
 ### Multi-Hop Reasoning
 - **[Multi-Hop Question Answering via Reasoning Chains](https://arxiv.org/abs/1910.02610)** (De Cao et al., 2019) - Multi-hop QA
-- **[Retrieval-Augmented Generation for Multi-Hop Question Answering](https://arxiv.org/abs/2203.11125)** (Mao et al., 2022) - RAG for complex reasoning
 - **[Chain-of-Thought Prompting Elicits Reasoning in Large Language Models](https://arxiv.org/abs/2201.11903)** (Wei et al., 2022) - Reasoning capabilities
 
 ## Evaluation and Metrics
@@ -64,31 +62,22 @@ To provide theoretical foundations, cutting-edge research insights, and practica
 ## Specialized RAG Applications
 
 ### Multi-Modal RAG
-- **[Retrieval-Augmented Generation for Multimodal Information Seeking](https://arxiv.org/abs/2303.10126)** (Liu et al., 2023) - Multi-modal RAG
-- **[RAG for Images: Retrieval-Augmented Generation for Visual Question Answering](https://arxiv.org/abs/2303.10126)** - Visual RAG systems
-- **[Audio RAG: Retrieval-Augmented Generation for Audio Understanding](https://arxiv.org/abs/2303.10126)** - Audio processing with RAG
+*Note: Multi-modal RAG is an emerging research area. Specific papers will be added as they are published.*
 
 ### Code RAG
 - **[CodeT5+: Identifier-aware Unified Pre-trained Encoder-Decoder Models for Code Understanding and Generation](https://arxiv.org/abs/2301.05979)** (Wang et al., 2023) - Code understanding
-- **[Retrieval-Augmented Code Generation](https://arxiv.org/abs/2203.11125)** - Code generation with RAG
 - **[CodeSearchNet Challenge: Evaluating the State of Semantic Code Search](https://arxiv.org/abs/1909.09436)** (Husain et al., 2019) - Code search evaluation
 
 ### Domain-Specific RAG
-- **[RAG for Scientific Literature](https://arxiv.org/abs/2303.10126)** - Scientific paper analysis
-- **[RAG for Legal Documents](https://arxiv.org/abs/2303.10126)** - Legal document processing
-- **[RAG for Medical Information](https://arxiv.org/abs/2303.10126)** - Healthcare applications
+*Note: Domain-specific RAG applications are an active research area. Specific papers will be added as they are published.*
 
 ## Production and Scalability
 
 ### System Design
-- **[Production RAG: Lessons from Building Large-Scale RAG Systems](https://arxiv.org/abs/2303.10126)** - Production considerations
-- **[Scalable RAG: Distributed Retrieval-Augmented Generation](https://arxiv.org/abs/2303.10126)** - Scalability approaches
-- **[RAG Optimization: Techniques for Improving Performance](https://arxiv.org/abs/2303.10126)** - Performance optimization
+*Note: Production and scalability papers for RAG are emerging. Specific papers will be added as they are published.*
 
 ### Cost and Efficiency
-- **[Efficient RAG: Reducing Computational Costs](https://arxiv.org/abs/2303.10126)** - Cost optimization
-- **[RAG Caching: Strategies for Improving Response Times](https://arxiv.org/abs/2303.10126)** - Caching strategies
-- **[RAG Compression: Model Compression for RAG Systems](https://arxiv.org/abs/2303.10126)** - Model compression
+*Note: Cost optimization and efficiency papers for RAG are emerging. Specific papers will be added as they are published.*
 
 ## Datasets and Benchmarks
 
@@ -115,12 +104,12 @@ To provide theoretical foundations, cutting-edge research insights, and practica
 ### For Intermediate Researchers
 1. **Shi et al. (2023)** - Black-box RAG approaches
 2. **Asai et al. (2023)** - Self-reflective RAG systems
-3. **Wang et al. (2023)** - Multi-query fusion
+3. **Wang et al. (2022)** - Multi-vector retrieval
 
 ### For Advanced Practitioners
 1. **Penedo et al. (2024)** - End-to-end RAG training
-2. **Production and scalability papers** - Real-world considerations
-3. **Domain-specific applications** - Specialized use cases
+2. **Advanced retrieval techniques** - Dense, sparse, and hybrid approaches
+3. **Evaluation and metrics** - RAG-specific evaluation frameworks
 
 ## Contributing
 
