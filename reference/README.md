@@ -1,4 +1,4 @@
-# Reference on Retrieval-Augmented Generation (RAG)
+# Reference material for Retrieval-Augmented Generation (RAG)
 
 This folder contains a focused collection of books that directly discuss or significantly support the understanding and application of **Retrieval-Augmented Generation (RAG)**.
 
@@ -13,7 +13,6 @@ These titles either directly address RAG or offer deep insight into the retrieva
 - *Hybrid Search and Language Models* (industry publication or report-based texts) – Practical applications of combining search and generation.
 - *Retrieval-Augmented Generation Systems: Design and Evaluation* (if available or to be added from niche publishers or thesis projects)
 
-> Note: This list is intentionally selective. Books on general NLP, transformers, or deep learning are excluded unless they explicitly cover RAG systems.
 
 ## Contributions
 You're welcome to:
