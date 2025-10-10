@@ -10,6 +10,52 @@ This repository contains a comprehensive collection of resources for learning an
 - **"Deep Learning for Search"** - Neural approaches to information retrieval
 - **"Transformers for Natural Language Processing"** - Understanding the generation component
 
+## GraphRAG
+
+**GraphRAG** is Microsoft Research's advanced approach to Retrieval-Augmented Generation that uses knowledge graphs to provide substantial improvements in question-and-answer performance when reasoning about complex information. Unlike traditional RAG systems that rely on vector similarity search, GraphRAG creates structured knowledge graphs from unstructured text to enable more sophisticated reasoning and "connecting the dots" across disparate pieces of information.
+
+### What is GraphRAG?
+
+GraphRAG is a structured, hierarchical approach to RAG that addresses key limitations of baseline RAG systems:
+
+- **Connecting the dots**: GraphRAG excels when answering questions requires traversing disparate pieces of information through their shared attributes to provide new synthesized insights
+- **Holistic understanding**: GraphRAG performs well when being asked to understand summarized semantic concepts over large data collections or even singular large documents
+- **Knowledge graph structure**: Instead of plain text snippets, GraphRAG extracts entities, relationships, and key claims to build a comprehensive knowledge graph
+
+### The GraphRAG Process
+
+The GraphRAG methodology involves three main phases:
+
+1. **Index Phase**:
+   - Slice input corpus into TextUnits for analysis
+   - Extract entities, relationships, and key claims
+   - Perform hierarchical clustering using the Leiden technique
+   - Generate community summaries from bottom-up
+
+2. **Query Phase**:
+   - **Global Search**: Reasoning about holistic questions using community summaries
+   - **Local Search**: Reasoning about specific entities by exploring their neighbors
+   - **DRIFT Search**: Enhanced local search with community context
+   - **Basic Search**: Traditional vector similarity when appropriate
+
+3. **Prompt Tuning**: Fine-tuning prompts for optimal performance with your specific data
+
+### Key Advantages
+
+- **Superior reasoning**: Outperforms baseline RAG on complex, multi-hop questions
+- **Structured knowledge**: Leverages graph machine learning for better context understanding
+- **Community detection**: Automatically identifies and summarizes related concepts
+- **Scalable**: Works with large datasets and complex document collections
+
+### References
+
+- [GraphRAG Documentation](https://microsoft.github.io/graphrag/) - Official Microsoft documentation
+- [GraphRAG GitHub Repository](https://github.com/microsoft/graphrag) - Source code and examples
+- [GraphRAG Website](https://graphrag.com/) - Additional resources and information
+- [Neo4j GraphRAG Blog](https://neo4j.com/blog/genai/what-is-graphrag/) - Technical deep dive
+- [Microsoft Research Project](https://www.microsoft.com/en-us/research/project/graphrag/) - Research background
+- [GraphRAG Explained: Enhancing RAG with Knowledge Graphs](https://medium.com/@zilliz_learn/graphrag-explained-enhancing-rag-with-knowledge-graphs-3312065f99e1) - Comprehensive explanation
+
 ## Implementation Resources
 
 ### Frameworks & Libraries
