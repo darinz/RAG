@@ -21,6 +21,7 @@ This directory contains the following documents for offline reference:
 - **[FiD: Leveraging Passage Retrieval with Generative Models for Open Domain Question Answering](https://arxiv.org/abs/2007.01282)** (Izacard & Grave, 2021) - Fusion-in-Decoder approach
 
 ### Advanced RAG Architectures
+- **[Retrieval-Augmented Generation with Graphs (GraphRAG)](https://arxiv.org/abs/2501.00309)** (Han et al., 2025) - Comprehensive survey on GraphRAG techniques using knowledge graphs for enhanced reasoning
 - **[RAGatouille: RAG Training Redefined](https://arxiv.org/abs/2401.00450)** (Penedo et al., 2024) - End-to-end RAG training
 - **[RAG-Fusion: A Novel Architecture for Retrieval-Augmented Generation](https://arxiv.org/abs/2312.10997)** (Wang et al., 2023) - Multi-query fusion approach
 - **[Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection](https://arxiv.org/abs/2310.11511)** (Asai et al., 2023) - Self-reflective RAG systems
