@@ -52,3 +52,11 @@ export function ensureIndexConfiguration(
 
   // Get validated base configuration (e.g., shared fields like `project`, `verbose`, etc.)
   const baseConfig = ensureBaseConfiguration(config);
+
+  // Return the final, validated configuration object
+  return {
+    ...baseConfig,
+    docsFile: configurable.docsFile ?? DEFAULT_DOCS_FILE,
+    useSampleDocs: configurable.useSampleDocs ?? false,
+  };
+}
