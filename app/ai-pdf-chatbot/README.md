@@ -160,7 +160,7 @@ The system consists of:
      - Mac Install Instructions: https://docs.docker.com/desktop/setup/install/mac-install/
      - Use recommended settings (Requires password). This lets Docker Desktop automatically set the necessary configuration settings.
      - Learn: https://docs.docker.com/get-started/introduction/
-
+   - Start `docker` per instructions from above
    - Install Supabase CLI:
      ```bash
      brew install supabase/tap/supabase
@@ -391,21 +391,49 @@ You can customize the backend and frontend.
    - Make sure you copied .env.example to .env in both backend and frontend.
    - Check your environment variables are correct and restart the dev server.
 
-3. **Supabase Vector Store**
+3. **Supabase Port Conflicts**
+   - If you get "port is already allocated" errors when running `supabase start`, try these solutions:
+     - **Check for existing Supabase instances:**
+       ```bash
+       supabase stop
+       ```
+     - **Check for other PostgreSQL instances:**
+       ```bash
+       # Check what's using port 54322
+       lsof -i :54322
+       # Or on some systems:
+       netstat -tulpn | grep 54322
+       ```
+     - **Stop conflicting services:**
+       ```bash
+       # If you have PostgreSQL running locally
+       brew services stop postgresql
+       # Or if using Docker
+       docker ps | grep postgres
+       docker stop <container_id>
+       ```
+     - **Reset Supabase (if needed):**
+       ```bash
+       supabase stop
+       supabase db reset
+       supabase start
+       ```
+
+4. **Supabase Vector Store**
    - Ensure you have configured your Supabase instance with the documents table and match_documents function. Check the official LangChain docs on Supabase integration.
    - Verify your Supabase connection by checking the logs in the LangGraph server.
 
-4. **OpenAI Errors**
+5. **OpenAI Errors**
    - Double-check your OPENAI_API_KEY. Make sure you have enough credits/quota.
    - Check the OpenAI API status page for any ongoing issues.
    - Verify your API key permissions and rate limits.
 
-5. **LangGraph Not Running**
+6. **LangGraph Not Running**
    - If yarn langgraph:dev fails, confirm your Node version is >= 18 and that you have all dependencies installed.
    - Check the LangGraph server logs for any specific error messages.
    - Ensure all required environment variables are set correctly.
 
-6. **Network Errors**
+7. **Network Errors**
    - Frontend must point to the correct NEXT_PUBLIC_LANGGRAPH_API_URL. By default, it is http://localhost:2024.
    - Check if your firewall or security settings are blocking the connections.
    - Verify that both frontend and backend servers are running on the expected ports.
