@@ -19,7 +19,7 @@ This is an implementation of an AI chatbot that "ingests" PDF documents, stores 
    - [Asking Questions](#asking-questions)
    - [Viewing Chat History](#viewing-chat-history)
 8. [Production Build & Deployment](#production-build--deployment)
-9. [Customizing](#customizing-the-agent)
+9. [Customizing](#customizing)
 10. [Troubleshooting](#troubleshooting)
 11. [Next Steps](#next-steps)
 
