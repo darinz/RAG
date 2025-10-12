@@ -153,6 +153,14 @@ The system consists of:
      ```
 
 3. **Supabase project** (if you plan to store embeddings in Supabase).
+
+   **Running Supabase locally**
+   - The Supabase CLI uses Docker containers to manage the local development stack. Follow the official guide to install and configure [Docker Desktop](https://docs.docker.com/desktop):
+     - Download: https://docs.docker.com/desktop/release-notes/
+     - Mac Install Instructions: https://docs.docker.com/desktop/setup/install/mac-install/
+     - Use recommended settings (Requires password). This lets Docker Desktop automatically set the necessary configuration settings.
+     - Learn: https://docs.docker.com/get-started/introduction/
+
    - Install Supabase CLI:
      ```bash
      brew install supabase/tap/supabase
