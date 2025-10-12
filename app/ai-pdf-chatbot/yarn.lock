@@ -737,23 +737,7 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@langchain/community@^0.3.26":
-  version "0.3.31"
-  resolved "https://registry.npmjs.org/@langchain/community/-/community-0.3.31.tgz"
-  integrity sha512-VsqZBQdJqJ8LeBjmVAAujpGQaSYjSXItb8uyWzoq/+fQkpq7UjWGnKWDkY65kBYPNDf6ShwjUdGiLm2yuyefzQ==
-  dependencies:
-    "@langchain/openai" ">=0.2.0 <0.5.0"
-    binary-extensions "^2.2.0"
-    expr-eval "^2.0.2"
-    flat "^5.0.2"
-    js-yaml "^4.1.0"
-    langchain ">=0.2.3 <0.3.0 || >=0.3.4 <0.4.0"
-    langsmith ">=0.2.8 <0.4.0"
-    uuid "^10.0.0"
-    zod "^3.22.3"
-    zod-to-json-schema "^3.22.5"
-
-"@langchain/community@^0.3.31", "@langchain/community@^0.3.33":
+"@langchain/community@^0.3.26", "@langchain/community@^0.3.31", "@langchain/community@^0.3.33":
   version "0.3.33"
   resolved "https://registry.npmjs.org/@langchain/community/-/community-0.3.33.tgz"
   integrity sha512-BtgfvyPvb/HYUWLa5YXoDVMY+8pkZvaZzwp5NSebstVKsitsjuG/pwzZ7gDQO1c8LJZlxAeYyAwwQBI87ibRRg==
@@ -769,25 +753,7 @@
     zod "^3.22.3"
     zod-to-json-schema "^3.22.5"
 
-"@langchain/core@^0.3.27", "@langchain/core@^0.3.32", "@langchain/core@>=0.2.36 <0.3.0 || >=0.3.9 < 0.4.0", "@langchain/core@>=0.3.29 <0.4.0":
-  version "0.3.40"
-  resolved "https://registry.npmjs.org/@langchain/core/-/core-0.3.40.tgz"
-  integrity sha512-RGhJOTzJv6H+3veBAnDlH2KXuZ68CXMEg6B6DPTzL3IGDyd+vLxXG4FIttzUwjdeQKjrrFBwlXpJDl7bkoApzQ==
-  dependencies:
-    "@cfworker/json-schema" "^4.0.2"
-    ansi-styles "^5.0.0"
-    camelcase "6"
-    decamelize "1.2.0"
-    js-tiktoken "^1.0.12"
-    langsmith ">=0.2.8 <0.4.0"
-    mustache "^4.2.0"
-    p-queue "^6.6.2"
-    p-retry "4"
-    uuid "^10.0.0"
-    zod "^3.22.4"
-    zod-to-json-schema "^3.22.3"
-
-"@langchain/core@^0.3.40", "@langchain/core@^0.3.42", "@langchain/core@>=0.2.21 <0.4.0", "@langchain/core@>=0.2.31 <0.4.0", "@langchain/core@>=0.3.39 <0.4.0":
+"@langchain/core@^0.3.27", "@langchain/core@^0.3.32", "@langchain/core@^0.3.40", "@langchain/core@^0.3.42", "@langchain/core@>=0.2.21 <0.4.0", "@langchain/core@>=0.2.31 <0.4.0", "@langchain/core@>=0.2.36 <0.3.0 || >=0.3.9 < 0.4.0", "@langchain/core@>=0.3.29 <0.4.0", "@langchain/core@>=0.3.39 <0.4.0":
   version "0.3.42"
   resolved "https://registry.npmjs.org/@langchain/core/-/core-0.3.42.tgz"
   integrity sha512-pT/jC5lqWK3YGDq8dQwgKoa6anqAhMtG1x5JbnrOj9NdaLeBbCKBDQ+/Ykzk3nZ8o+0UMsaXNZo7IVL83VVjHg==
@@ -1573,13 +1539,6 @@
   dependencies:
     "@sinonjs/commons" "^3.0.0"
 
-"@supabase/auth-js@2.67.3":
-  version "2.67.3"
-  resolved "https://registry.npmjs.org/@supabase/auth-js/-/auth-js-2.67.3.tgz"
-  integrity sha512-NJDaW8yXs49xMvWVOkSIr8j46jf+tYHV0wHhrwOaLLMZSFO4g6kKAf+MfzQ2RaD06OCUkUHIzctLAxjTgEVpzw==
-  dependencies:
-    "@supabase/node-fetch" "^2.6.14"
-
 "@supabase/auth-js@2.68.0":
   version "2.68.0"
   resolved "https://registry.npmjs.org/@supabase/auth-js/-/auth-js-2.68.0.tgz"
@@ -1600,13 +1559,6 @@
   integrity sha512-1ibVeYUacxWYi9i0cf5efil6adJ9WRyZBLivgjs+AUpewx1F3xPi7gLgaASI2SmIQxPoCEjAsLAzKPgMJVgOUQ==
   dependencies:
     whatwg-url "^5.0.0"
-
-"@supabase/postgrest-js@1.18.1":
-  version "1.18.1"
-  resolved "https://registry.npmjs.org/@supabase/postgrest-js/-/postgrest-js-1.18.1.tgz"
-  integrity sha512-dWDnoC0MoDHKhaEOrsEKTadWQcBNknZVQcSgNE/Q2wXh05mhCL1ut/jthRUrSbYcqIw/CEjhaeIPp7dLarT0bg==
-  dependencies:
-    "@supabase/node-fetch" "^2.6.14"
 
 "@supabase/postgrest-js@1.19.2":
   version "1.19.2"
@@ -1632,7 +1584,7 @@
   dependencies:
     "@supabase/node-fetch" "^2.6.14"
 
-"@supabase/supabase-js@^2.45.0", "@supabase/supabase-js@^2.49.1":
+"@supabase/supabase-js@^2.45.0", "@supabase/supabase-js@^2.48.1", "@supabase/supabase-js@^2.49.1":
   version "2.49.1"
   resolved "https://registry.npmjs.org/@supabase/supabase-js/-/supabase-js-2.49.1.tgz"
   integrity sha512-lKaptKQB5/juEF5+jzmBeZlz69MdHZuxf+0f50NwhL+IE//m4ZnOeWlsKRjjsM0fVayZiQKqLvYdBn0RLkhGiQ==
@@ -1641,18 +1593,6 @@
     "@supabase/functions-js" "2.4.4"
     "@supabase/node-fetch" "2.6.15"
     "@supabase/postgrest-js" "1.19.2"
-    "@supabase/realtime-js" "2.11.2"
-    "@supabase/storage-js" "2.7.1"
-
-"@supabase/supabase-js@^2.48.1":
-  version "2.48.1"
-  resolved "https://registry.npmjs.org/@supabase/supabase-js/-/supabase-js-2.48.1.tgz"
-  integrity sha512-VMD+CYk/KxfwGbI4fqwSUVA7CLr1izXpqfFerhnYPSi6LEKD8GoR4kuO5Cc8a+N43LnfSQwLJu4kVm2e4etEmA==
-  dependencies:
-    "@supabase/auth-js" "2.67.3"
-    "@supabase/functions-js" "2.4.4"
-    "@supabase/node-fetch" "2.6.15"
-    "@supabase/postgrest-js" "1.18.1"
     "@supabase/realtime-js" "2.11.2"
     "@supabase/storage-js" "2.7.1"
 
@@ -2441,7 +2381,7 @@ babel-preset-jest@^29.6.3:
     babel-plugin-jest-hoist "^29.6.3"
     babel-preset-current-node-syntax "^1.0.0"
 
-"backend@file:/Users/dzhen/nlp/ai-pdf-chatbot-langchain/backend":
+"backend@file:/Users/rena/Repos/RAG/app/ai-pdf-chatbot/backend":
   version "0.0.1"
   resolved "file:backend"
   dependencies:
@@ -3945,7 +3885,7 @@ fraction.js@^4.3.7:
   resolved "https://registry.npmjs.org/fraction.js/-/fraction.js-4.3.7.tgz"
   integrity sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==
 
-"frontend@file:/Users/dzhen/nlp/ai-pdf-chatbot-langchain/frontend":
+"frontend@file:/Users/rena/Repos/RAG/app/ai-pdf-chatbot/frontend":
   version "0.1.0"
   resolved "file:frontend"
   dependencies:
@@ -3981,6 +3921,7 @@ fraction.js@^4.3.7:
     "@radix-ui/react-toggle-group" "^1.1.1"
     "@radix-ui/react-tooltip" "^1.1.6"
     "@tailwindcss/typography" latest
+    autoprefixer "^10.4.20"
     class-variance-authority "^0.7.1"
     clsx "^2.1.1"
     cmdk "1.0.4"
@@ -3993,6 +3934,7 @@ fraction.js@^4.3.7:
     next "14.2.16"
     next-themes "^0.4.4"
     pdf-parse "^1.1.1"
+    postcss "^8.5.3"
     react "^18"
     react-day-picker "8.10.1"
     react-dom "^18"
@@ -4001,6 +3943,7 @@ fraction.js@^4.3.7:
     recharts "2.15.0"
     sonner "^1.7.1"
     tailwind-merge "^2.5.5"
+    tailwindcss "^3.4.17"
     tailwindcss-animate "^1.0.7"
     vaul "^0.9.6"
     zod "^3.24.1"
@@ -7208,21 +7151,6 @@ tsx@^4.19.2:
     get-tsconfig "^4.7.5"
   optionalDependencies:
     fsevents "~2.3.3"
-
-turbo-darwin-arm64@2.4.4:
-  version "2.4.4"
-  resolved "https://registry.npmjs.org/turbo-darwin-arm64/-/turbo-darwin-arm64-2.4.4.tgz"
-  integrity sha512-/gtHPqbGQXDFhrmy+Q/MFW2HUTUlThJ97WLLSe4bxkDrKHecDYhAjbZ4rN3MM93RV9STQb3Tqy4pZBtsd4DfCw==
-
-turbo@latest:
-  version "2.4.4"
-  optionalDependencies:
-    turbo-darwin-64 "2.4.4"
-    turbo-darwin-arm64 "2.4.4"
-    turbo-linux-64 "2.4.4"
-    turbo-linux-arm64 "2.4.4"
-    turbo-windows-64 "2.4.4"
-    turbo-windows-arm64 "2.4.4"
 
 type-check@^0.4.0, type-check@~0.4.0:
   version "0.4.0"
