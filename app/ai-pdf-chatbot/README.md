@@ -173,6 +173,26 @@ The system consists of:
      ```bash
      supabase start
      ```
+
+   - **Access your project's services**
+     - Once all of the Supabase services are running, you'll see output containing your local Supabase credentials. It should look like this, with urls and keys that you'll use in your local project:
+```
+         API URL: http://127.0.0.1:54321
+     GraphQL URL: http://127.0.0.1:54321/graphql/v1
+  S3 Storage URL: http://127.0.0.1:54321/storage/v1/s3
+          DB URL: postgresql://postgres:postgres@127.0.0.1:54322/postgres
+      Studio URL: http://127.0.0.1:54323
+    Inbucket URL: http://127.0.0.1:54324
+      JWT secret: super-secret-jwt-token-with-at-least-32-characters-long
+        anon key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+service_role key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9s
+```
+   - **Studio**: Default URL: http://localhost:54323
+       - The local development environment includes Supabase Studio, a graphical interface for working with your database.
+   - **Stopping local services**
+     - When you are finished working on your Supabase project, you can stop the stack (without resetting your local database):
+     - ```supabase stop```
+
    - You will need:
      - `SUPABASE_URL` (API URL): http://127.0.0.1:54321
      - `SUPABASE_SERVICE_ROLE_KEY` (from the CLI output)
