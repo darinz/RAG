@@ -121,7 +121,7 @@ The system consists of:
 
 ## Prerequisites
 
-1. **Node.js v18+** (we recommend Node v20).
+## 1. **Node.js v18+** (we recommend Node v20).
    - Installation on Mac:
      ```bash
      brew install node@20
@@ -140,7 +140,7 @@ The system consists of:
      export CPPFLAGS="-I/opt/homebrew/opt/node@20/include"
      ```
 
-2. **Yarn** (or npm, but this monorepo is pre-configured with Yarn).
+## 2. **Yarn** (or npm, but this monorepo is pre-configured with Yarn).
    - The preferred way to manage Yarn is by-project through Corepack:
      ```bash
      corepack enable
@@ -152,7 +152,7 @@ The system consists of:
      yarn install
      ```
 
-3. **Supabase project** (if you plan to store embeddings in Supabase).
+## 3. **Supabase project** (if you plan to store embeddings in Supabase).
 
    **Running Supabase locally**
    - The Supabase CLI uses Docker containers to manage the local development stack. Follow the official guide to install and configure [Docker Desktop](https://docs.docker.com/desktop):
@@ -196,18 +196,166 @@ service_role key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZ
    - You will need:
      - `SUPABASE_URL` (API URL): http://127.0.0.1:54321
      - `SUPABASE_SERVICE_ROLE_KEY` (from the CLI output)
-     - A table named `documents` and a function named `match_documents` for vector similarity search
+     - A table named `documents` and a function named `match_documents` for vector similarity search. 
+     - See [LangChain documentation for guidance on setting up the tables](https://js.langchain.com/docs/integrations/vectorstores/supabase/)
      - Required packages:
        ```bash
        yarn add @langchain/community @langchain/core @supabase/supabase-js @langchain/openai
        ```
 
-4. **OpenAI API Key** (or another LLM provider's key, supported by LangChain).
+   **Setting up the Supabase Database for Vector Search**
+
+   To use Supabase as a vector store for document embeddings, you need to set up the database with the required table and function. Follow these steps:
+
+   **Install Required Packages**
+   
+   First, ensure you have the necessary packages installed:
+   ```bash
+   yarn add @langchain/community @langchain/core @supabase/supabase-js @langchain/openai
+   ```
+
+   **Using Supabase Studio for Database Setup (GUI Method)**
+   
+   If you prefer a graphical interface, you can use Supabase Studio to set up your database:
+
+   **Step 1: Access Supabase Studio**
+   
+   1. Open your browser and navigate to http://localhost:54323 (or the Studio URL from your `supabase start` output)
+   2. You should see the Supabase Studio dashboard
+
+   **Step 2: Enable the pgvector Extension**
+   
+   1. In the left sidebar, click on **"SQL Editor"**
+   2. Click **"New Query"** to create a new SQL query
+   3. Copy and paste this SQL command:
+   ```sql
+   -- Enable the pgvector extension
+   CREATE EXTENSION IF NOT EXISTS vector;
+   ```
+   4. Click **"Run"** to execute the query
+   5. You should see a success message confirming the extension was created
+
+   **Step 3: Create the Documents Table**
+   
+   1. In the SQL Editor, create a new query
+   2. Copy and paste this SQL command:
+   ```sql
+   -- Create the documents table
+   CREATE TABLE IF NOT EXISTS documents (
+     id BIGSERIAL PRIMARY KEY,
+     content TEXT NOT NULL,
+     metadata JSONB,
+     embedding VECTOR(1536) -- OpenAI embeddings are 1536 dimensions
+   );
+   ```
+   3. Click **"Run"** to execute the query
+   4. You should see a success message confirming the table was created
+
+   **Step 4: Create the Vector Similarity Search Function**
+   
+   1. In the SQL Editor, create a new query
+   2. Copy and paste this SQL command:
+   ```sql
+   -- Create the match_documents function for vector similarity search
+   CREATE OR REPLACE FUNCTION match_documents (
+     query_embedding VECTOR(1536),
+     match_count INT DEFAULT 5,
+     filter JSONB DEFAULT '{}'
+   )
+   RETURNS TABLE (
+     id BIGINT,
+     content TEXT,
+     metadata JSONB,
+     similarity FLOAT
+   )
+   LANGUAGE plpgsql
+   AS $$
+   BEGIN
+     RETURN QUERY
+     SELECT
+       documents.id,
+       documents.content,
+       documents.metadata,
+       1 - (documents.embedding <=> query_embedding) AS similarity
+     FROM documents
+     WHERE (filter = '{}' OR documents.metadata @> filter)
+     ORDER BY documents.embedding <=> query_embedding
+     LIMIT match_count;
+   END;
+   $$;
+   ```
+   3. Click **"Run"** to execute the query
+   4. You should see a success message confirming the function was created
+
+   **Step 5: Create Performance Index**
+   
+   1. In the SQL Editor, create a new query
+   2. Copy and paste this SQL command:
+   ```sql
+   -- Create an index on the embedding column for faster similarity search
+   CREATE INDEX IF NOT EXISTS documents_embedding_idx ON documents 
+   USING ivfflat (embedding vector_cosine_ops) WITH (lists = 100);
+   ```
+   3. Click **"Run"** to execute the query
+   4. You should see a success message confirming the index was created
+
+   **Step 6: Verify Your Setup Using Studio**
+   
+   1. **Check the Table**: 
+      - In the left sidebar, click on **"Table Editor"**
+      - You should see the `documents` table listed
+      - Click on it to view the table structure and confirm it has the correct columns
+
+   2. **Check the Function**:
+      - In the left sidebar, click on **"Database"** → **"Functions"**
+      - You should see the `match_documents` function listed
+      - Click on it to view the function definition
+
+   3. **Check the Extension**:
+      - In the left sidebar, click on **"Database"** → **"Extensions"**
+      - You should see the `vector` extension listed and enabled
+
+   4. **Test the Setup** (Optional):
+      - Go back to **"SQL Editor"**
+      - Run this test query to verify everything works:
+      ```sql
+      -- Test query to verify setup
+      SELECT 
+        'Extension' as component, 
+        CASE WHEN EXISTS (SELECT 1 FROM pg_extension WHERE extname = 'vector') 
+             THEN 'Enabled' ELSE 'Not Found' END as status
+      UNION ALL
+      SELECT 
+        'Table' as component,
+        CASE WHEN EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'documents') 
+             THEN 'Created' ELSE 'Not Found' END as status
+      UNION ALL
+      SELECT 
+        'Function' as component,
+        CASE WHEN EXISTS (SELECT 1 FROM information_schema.routines WHERE routine_name = 'match_documents') 
+             THEN 'Created' ELSE 'Not Found' END as status;
+      ```
+
+   **Step 7: View Your Database Schema**
+   
+   You can also view your database schema visually:
+   1. In the left sidebar, click on **"Database"** → **"Schema"**
+   2. You should see your `documents` table with all its columns
+   3. The `embedding` column should show as `vector(1536)`
+
+   **Troubleshooting in Studio**
+   
+   - If you get permission errors, make sure you're using the service role key in your environment variables
+   - If the vector extension doesn't appear, try running the extension creation command again
+   - If queries fail, check the **"Logs"** section in Studio for detailed error messages
+   - You can also check the **"Database"** → **"Logs"** section for any database-related errors
+
+### 4. **OpenAI API Key** (or another LLM provider's key, supported by LangChain).
    - Sign up at [OpenAI Platform](https://platform.openai.com)
    - Create an API key in your account settings
    - Ensure you have sufficient credits for your usage
 
-5. **LangChain API Key** (free and optional, but highly recommended for debugging and tracing your LangChain and LangGraph applications).
+### 5. **LangChain API Key** (free and optional, but highly recommended for debugging and tracing your LangChain and LangGraph applications).
    - Sign up at [LangSmith](https://smith.langchain.com)
    - Create an API key in your account settings
    - Learn more [here](https://docs.smith.langchain.com/administration/how_to_guides/organization_management/create_account_api_key)
