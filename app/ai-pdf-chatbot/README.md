@@ -214,7 +214,7 @@ service_role key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZ
 
 ---
 
-## Installation
+## Setup
 
 1. **Clone** the repository:
    ```bash
