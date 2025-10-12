@@ -19,7 +19,7 @@ This is an implementation of an AI chatbot that "ingests" PDF documents, stores 
    - [Asking Questions](#asking-questions)
    - [Viewing Chat History](#viewing-chat-history)
 8. [Production Build & Deployment](#production-build--deployment)
-9. [Customizing the Agent](#customizing-the-agent)
+9. [Customizing](#customizing-the-agent)
 10. [Troubleshooting](#troubleshooting)
 11. [Next Steps](#next-steps)
 
@@ -332,9 +332,9 @@ The frontend can be deployed to any hosting that supports Next.js (Vercel, Netli
 
 Make sure to set relevant environment variables in your deployment environment. In particular, ensure `NEXT_PUBLIC_LANGGRAPH_API_URL` is pointing to your deployed backend URL.
 
-## Customizing the Agent
+## Customizing
 
-You can customize the agent on the backend and frontend.
+You can customize the backend and frontend.
 
 ### Backend
 
