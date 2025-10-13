@@ -366,8 +366,8 @@ service_role key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZ
 
 1. **Clone** the repository:
    ```bash
-   git clone https://github.com/darinz/rag-pdf-chatbot.git
-   cd rag-pdf-chatbot
+   git clone https://github.com/darinz/RAG.git
+   cd RAG/app/ai-pdf-chatbot
    ```
 
 2. **Install dependencies** (from the repo root):
